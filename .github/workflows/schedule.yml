@@ -4,15 +4,15 @@ on:
     types: [build-event]
   schedule:
     - cron: "0 0 * * *"
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
 jobs:
   update-gist:
     runs-on: ubuntu-latest
     steps:
-      - name: Update gist
+      - name: Update my “I’m a night” Gist
         uses: maxam2017/productive-box@master
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIST_ID: ${{ secrets.GIST_ID }}
-          TIMEZONE: Asia/Seoul
+        with:
+          gh_token: ${{ secrets.GH_TOKEN }}
+          gist_id: ${{ secrets.GIST_ID }}
+          timezone: Asia/Seoul
